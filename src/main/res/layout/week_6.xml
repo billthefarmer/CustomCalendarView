@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/week_6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+  <org.billthefarmer.view.DayView
+      android:id="@+id/day_36"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="36" />
+
+  <org.billthefarmer.view.DayView
+      android:id="@+id/day_37"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="37" />
+
+  <org.billthefarmer.view.DayView
+      android:id="@+id/day_38"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="38" />
+
+  <org.billthefarmer.view.DayView
+      android:id="@+id/day_39"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="39" />
+
+  <org.billthefarmer.view.DayView
+      android:id="@+id/day_40"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="40" />
+
+  <org.billthefarmer.view.DayView
+      android:id="@+id/day_41"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="41" />
+
+  <org.billthefarmer.view.DayView
+      android:id="@+id/day_42"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="42" />
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+  <TextView
+      android:id="@+id/weekday_1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/mon" />
+
+  <TextView
+      android:id="@+id/weekday_2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/tue" />
+
+  <TextView
+      android:id="@+id/weekday_3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/wed" />
+
+  <TextView
+      android:id="@+id/weekday_4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/thu" />
+
+  <TextView
+      android:id="@+id/weekday_5"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/fri" />
+
+  <TextView
+      android:id="@+id/weekday_6"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/sat" />
+
+  <TextView
+      android:id="@+id/weekday_7"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="@string/sun" />
+
+</LinearLayout>
