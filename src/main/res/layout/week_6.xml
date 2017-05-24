@@ -13,8 +13,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
-      android:gravity="center"
-      android:text="36" />
+      android:gravity="center" />
 
   <org.billthefarmer.view.DayView
       android:id="@+id/day_37"
@@ -22,8 +21,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
-      android:gravity="center"
-      android:text="37" />
+      android:gravity="center" />
 
   <org.billthefarmer.view.DayView
       android:id="@+id/day_38"
@@ -31,8 +29,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
-      android:gravity="center"
-      android:text="38" />
+      android:gravity="center" />
 
   <org.billthefarmer.view.DayView
       android:id="@+id/day_39"
@@ -40,8 +37,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
-      android:gravity="center"
-      android:text="39" />
+      android:gravity="center" />
 
   <org.billthefarmer.view.DayView
       android:id="@+id/day_40"
@@ -49,8 +45,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
-      android:gravity="center"
-      android:text="40" />
+      android:gravity="center" />
 
   <org.billthefarmer.view.DayView
       android:id="@+id/day_41"
@@ -58,8 +53,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
-      android:gravity="center"
-      android:text="41" />
+      android:gravity="center" />
 
   <org.billthefarmer.view.DayView
       android:id="@+id/day_42"
@@ -67,7 +61,6 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
-      android:gravity="center"
-      android:text="42" />
+      android:gravity="center" />
 
 </LinearLayout>

@@ -9,49 +9,42 @@
       android:id="@+id/weekday_1"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:text="@string/mon" />
+      android:layout_weight="1" />
 
   <TextView
       android:id="@+id/weekday_2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:text="@string/tue" />
+      android:layout_weight="1" />
 
   <TextView
       android:id="@+id/weekday_3"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:text="@string/wed" />
+      android:layout_weight="1" />
 
   <TextView
       android:id="@+id/weekday_4"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:text="@string/thu" />
+      android:layout_weight="1" />
 
   <TextView
       android:id="@+id/weekday_5"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:text="@string/fri" />
+      android:layout_weight="1" />
 
   <TextView
       android:id="@+id/weekday_6"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:text="@string/sat" />
+      android:layout_weight="1" />
 
   <TextView
       android:id="@+id/weekday_7"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:text="@string/sun" />
+      android:layout_weight="1" />
 
 </LinearLayout>
