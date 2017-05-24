@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2016 Stacktips {link: http://stacktips.com}.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package org.billthefarmer.view;
 
@@ -5,14 +20,15 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
 public class DayView extends TextView
 {
-    private Date date;
+    private Calendar date;
     private List<DayDecorator> decorators;
 
     public DayView(Context context, AttributeSet attrs)
@@ -20,15 +36,15 @@ public class DayView extends TextView
         super(context, attrs);
     }
 
-    public void bind(Date date, List<DayDecorator> decorators)
+    public void bind(Calendar date, List<DayDecorator> decorators)
     {
         this.date = date;
         this.decorators = decorators;
 
-        final SimpleDateFormat df =
+        final DateFormat dateFormat =
             new SimpleDateFormat("d", Locale.getDefault());
-        int day = Integer.parseInt(df.format(date));
-        setText(String.valueOf(day));
+        // int day = Integer.parseInt(df.format(date));
+        setText(dateFormat.format(date.getTime()));
     }
 
     public void decorate()
@@ -43,7 +59,7 @@ public class DayView extends TextView
         }
     }
 
-    public Date getDate()
+    public Calendar getDate()
     {
         return date;
     }

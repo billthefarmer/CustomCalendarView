@@ -20,6 +20,7 @@ android {
     }
 
     lintOptions {
+        disable 'OldTargetApi', 'IconMissingDensityFolder'
 	// abortOnError false
     }
 }

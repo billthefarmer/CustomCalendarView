@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2016 Stacktips {link: http://stacktips.com}.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package org.billthefarmer.view;
 
@@ -196,16 +211,17 @@ public class CustomCalendarView extends LinearLayout
         View titleLayout = findViewById(R.id.title);
         titleLayout.setBackgroundColor(calendarTitleBackgroundColor);
 
-        String dateText =
-            new DateFormatSymbols(Locale.getDefault())
-            .getShortMonths()[currentCalendar.get(Calendar.MONTH)].toString();
-        dateText = dateText.substring(0, 1).toUpperCase(Locale.getDefault()) +
-            dateText.subSequence(1, dateText.length());
-
+        final String monthTextArray[] =
+            DateFormatSymbols.getInstance().getShortMonths();
+        String monthText =
+            monthTextArray[currentCalendar.get(Calendar.MONTH)];
+        String titleFormat =
+            context.getResources().getString(R.string.title_format);
+        String titleText = String.format(titleFormat, monthText,
+                                         currentCalendar.get(Calendar.YEAR));
         TextView dateTitle = (TextView) findViewById(R.id.month);
         dateTitle.setTextColor(calendarTitleTextColor);
-        dateTitle.setText(dateText + " " + currentCalendar.get(Calendar.YEAR));
-        dateTitle.setTextColor(calendarTitleTextColor);
+        dateTitle.setText(titleText);
 
         if (getCustomTypeface() != null)
             dateTitle.setTypeface(getCustomTypeface(), Typeface.BOLD);
@@ -218,14 +234,13 @@ public class CustomCalendarView extends LinearLayout
         String dayOfTheWeekString;
 
         final String[] weekDaysArray =
-            new DateFormatSymbols(Locale.getDefault())
-            .getShortWeekdays();
+            DateFormatSymbols.getInstance().getShortWeekdays();
         for (int i = 1; i < weekDaysArray.length; i++)
         {
             dayOfTheWeekString = weekDaysArray[i];
-            if (dayOfTheWeekString.length() > 3)
-                dayOfTheWeekString = dayOfTheWeekString.substring(0, 3)
-                    .toUpperCase(Locale.getDefault());
+            // if (dayOfTheWeekString.length() > 3)
+            //     dayOfTheWeekString = dayOfTheWeekString.substring(0, 3)
+            //         .toUpperCase(Locale.getDefault());
 
             dayOfWeek = (TextView)
                 findViewById(weekdays[getWeekIndex(i, currentCalendar) - 1]);
@@ -260,7 +275,7 @@ public class CustomCalendarView extends LinearLayout
 
             //Apply the default styles
             dayView.setOnClickListener(null);
-            dayView.bind(startCalendar.getTime(), getDecorators());
+            dayView.bind(startCalendar, getDecorators());
             dayView.setVisibility(View.VISIBLE);
 
             if (CalendarUtils.isSameMonth(calendar, startCalendar))
