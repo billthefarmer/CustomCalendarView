@@ -1,4 +1,4 @@
-# CustomCalendarView
+# CustomCalendarView [![Build Status](https://travis-ci.org/billthefarmer/CustomCalendarView.svg?branch=master)](https://travis-ci.org/billthefarmer/CustomCalendarView)
 Android custom calendar view - not quite forked from https://github.com/npanigrahy/Custom-Calendar-View
 
 The npanigrahy/Custom-Calendar-View library, although the best I could find, has several problems
