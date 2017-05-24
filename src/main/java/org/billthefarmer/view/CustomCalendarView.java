@@ -75,6 +75,7 @@ public class CustomCalendarView extends LinearLayout
     private Calendar currentCalendar;
     private Date lastSelectedDay;
     private Typeface customTypeface;
+    private View view;
 
     private int disabledDayBackgroundColor;
     private int disabledDayTextColor;
@@ -164,9 +165,9 @@ public class CustomCalendarView extends LinearLayout
     {
         final LayoutInflater inflater = (LayoutInflater)
             context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.main, this, true);
+        view = inflater.inflate(R.layout.main, this, true);
 
-        ImageButton previous = (ImageButton) findViewById(R.id.previous);
+        ImageButton previous = (ImageButton) view.findViewById(R.id.previous);
         previous.setOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -182,7 +183,7 @@ public class CustomCalendarView extends LinearLayout
                 }
             });
 
-        ImageButton next = (ImageButton) findViewById(R.id.next);
+        ImageButton next = (ImageButton) view.findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener()
             {
             @Override
@@ -208,7 +209,7 @@ public class CustomCalendarView extends LinearLayout
     // initializeTitleLayout
     private void initializeTitleLayout()
     {
-        View titleLayout = findViewById(R.id.title);
+        View titleLayout = view.findViewById(R.id.title);
         titleLayout.setBackgroundColor(calendarTitleBackgroundColor);
 
         final String monthTextArray[] =
@@ -219,7 +220,7 @@ public class CustomCalendarView extends LinearLayout
             context.getResources().getString(R.string.title_format);
         String titleText = String.format(titleFormat, monthText,
                                          currentCalendar.get(Calendar.YEAR));
-        TextView dateTitle = (TextView) findViewById(R.id.month);
+        TextView dateTitle = (TextView) view.findViewById(R.id.month);
         dateTitle.setTextColor(calendarTitleTextColor);
         dateTitle.setText(titleText);
 
@@ -243,7 +244,8 @@ public class CustomCalendarView extends LinearLayout
             //         .toUpperCase(Locale.getDefault());
 
             dayOfWeek = (TextView)
-                findViewById(weekdays[getWeekIndex(i, currentCalendar) - 1]);
+                view.findViewById(weekdays[getWeekIndex(i,
+                                                        currentCalendar) - 1]);
             dayOfWeek.setText(dayOfTheWeekString);
         }
     }
@@ -269,7 +271,7 @@ public class CustomCalendarView extends LinearLayout
         DayView dayView;
         for (int i = 1; i <= 42; i++)
         {
-            dayView = (DayView) findViewById(days[i - 1]);
+            dayView = (DayView) view.findViewById(days[i - 1]);
             if (dayView == null)
                 continue;
 
@@ -309,8 +311,8 @@ public class CustomCalendarView extends LinearLayout
 
         // If the last week row has no visible days, hide it or show
         // it in case
-        ViewGroup weekRow = (ViewGroup) findViewById(weeks[5]);
-        dayView = (DayView) findViewById(days[35]);
+        ViewGroup weekRow = (ViewGroup) view.findViewById(weeks[5]);
+        dayView = (DayView) view.findViewById(days[35]);
         if (dayView.getVisibility() != VISIBLE)
             weekRow.setVisibility(GONE);
 
@@ -395,7 +397,7 @@ public class CustomCalendarView extends LinearLayout
     private View getView(Calendar currentCalendar)
     {
         int index = getDayIndexByDate(currentCalendar);
-        View childView = findViewById(days[index - 1]);
+        View childView = view.findViewById(days[index - 1]);
         return childView;
     }
 
