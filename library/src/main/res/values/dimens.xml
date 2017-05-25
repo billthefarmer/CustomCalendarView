@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <dimen name="calendarTitlePaddingTop">8dp</dimen>
+  <dimen name="calendarTitlePaddingBottom">8dp</dimen>
+  <dimen name="weekTitlePaddingTop">8dp</dimen>
+  <dimen name="weekTitlePaddingBottom">8dp</dimen>
+  <dimen name="minDayCellWidth">40dp</dimen>
+  <dimen name="minDayCellHeight">40dp</dimen>
+
+</resources>
