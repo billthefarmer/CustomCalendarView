@@ -8,8 +8,7 @@
     <attr name="calendarBackgroundColor" format="color" />
     <attr name="disabledDayBackgroundColor" format="color" />
     <attr name="disabledDayTextColor" format="color" />
-    <attr name="selectedDayBackgroundColor" format="color" />
-    <attr name="selectedDayBackground" format="integer" />
+    <attr name="selectedDayBackground" format="reference" />
     <attr name="selectedDayTextColor" format="color" />
     <attr name="weekLayoutBackgroundColor" format="color" />
     <attr name="titleLayoutBackgroundColor" format="color" />

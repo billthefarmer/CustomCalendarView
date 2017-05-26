@@ -18,6 +18,7 @@ package org.billthefarmer.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -81,9 +82,9 @@ public class CustomCalendarView extends LinearLayout
     private int disabledDayBackgroundColor;
     private int disabledDayTextColor;
     private int calendarBackgroundColor;
-    private int selectedDayBackground;
     private int weekLayoutBackgroundColor;
     private int calendarTitleBackgroundColor;
+    private int selectedDayBackground;
     private int selectedDayTextColor;
     private int calendarTitleTextColor;
     private int dayOfWeekTextColor;
@@ -146,10 +147,9 @@ public class CustomCalendarView extends LinearLayout
                                 getResources()
                                 .getColor(R.color.day_disabled_text_color));
         selectedDayBackground =
-            typedArray.getColor(R.styleable
-                                .CustomCalendarView_selectedDayBackgroundColor,
-                                getResources()
-                                .getColor(R.color.selected_day_background));
+            typedArray.getInteger(R.styleable
+                                  .CustomCalendarView_selectedDayBackground,
+                                  R.drawable.selected);
         selectedDayTextColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_selectedDayTextColor,
@@ -480,7 +480,8 @@ public class CustomCalendarView extends LinearLayout
 
         // Mark current day as selected
         DayView view = getDayOfMonthText(currentCalendar);
-        view.setBackgroundColor(selectedDayBackground);
+        view.setBackgroundResource(selectedDayBackground);
+            
         view.setTextColor(selectedDayTextColor);
     }
 
