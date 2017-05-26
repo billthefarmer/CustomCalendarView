@@ -1,4 +1,4 @@
-# CustomCalendarView [![Build Status](https://travis-ci.org/billthefarmer/CustomCalendarView.svg?branch=master)](https://travis-ci.org/billthefarmer/CustomCalendarView)
+# CustomCalendarView [![Build Status](https://travis-ci.org/billthefarmer/CustomCalendarView.svg?branch=master)](https://travis-ci.org/billthefarmer/CustomCalendarView) [![JitPack](https://jitpack.io/v/billthefarmer/CustomCalendarView.svg)](https://jitpack.io/#billthefarmer/CustomCalendarView)
 Android custom calendar view - not quite forked from https://github.com/npanigrahy/Custom-Calendar-View
 
 ![Calendar](https://github.com/billthefarmer/billthefarmer.github.io/raw/master/images/Calendar.png)
