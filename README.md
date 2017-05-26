@@ -3,14 +3,16 @@ Android custom calendar view - not quite forked from https://github.com/npanigra
 
 ![Calendar](https://github.com/billthefarmer/billthefarmer.github.io/raw/master/images/Calendar.png)
 
-The npanigrahy/Custom-Calendar-View library, although the best I could find, has several problems
+The [npanigrahy/Custom-Calendar-View](https://github.com/npanigrahy/Custom-Calendar-View) library,
+although the best I could find, has several problems
 * It is slow starting, probably due to finding views using keys rather than ids
 * If used in a dialog it can be very wide, especially in landscape, possibly due to
   using `android:layout_width="match_parent"` rather than `wrap_content`
-* Using a colour rather than a drawable for the selected entry background, so
+* Uses a colour rather than a drawable for the selected entry background, so
   you can't use a rounded rectangle, for example, without providing a DayDecorator
 
-This is an attempt to fix some of the above without breaking it.
+This is an attempt to fix some of the above without breaking it. It all works as it should, but the calendar
+is the same size as [CalendarView](https://developer.android.com/reference/android/widget/CalendarView.html).
 
 ## Use in project
 Add the driver to your build.gradle with
