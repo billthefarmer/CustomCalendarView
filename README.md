@@ -36,7 +36,7 @@ library is added to your project, you can include the
 CustomCalendarView into your activity/fragment layout using the
 following code snippets.
 ```xml
-<com.stacktips.view.CustomCalendarView
+<org.billthefarmer.view.CustomCalendarView
 	android:id="@+id/calendar_view"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
@@ -46,7 +46,7 @@ The above code snippet will show the simple Calendar View with the
 default design. You can use the following attributes to customize the
 appearance of the calendar.
 ```xml
-<com.stacktips.view.CustomCalendarView
+<org.billthefarmer.view.CustomCalendarView
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,8 +60,7 @@ appearance of the calendar.
         app:disabledDayTextColor="@color/grey"
         app:selectedDayBackground="@[color|drawable]/[blue|selected]"
         app:titleLayoutBackgroundColor="@color/white"
-        app:weekLayoutBackgroundColor="@color/white">
-</com.stacktips.view.CustomCalendarView>
+        app:weekLayoutBackgroundColor="@color/white" />
 ```
 Initialize the calendar view to control the behavior of the calendar
 using the following methods.
