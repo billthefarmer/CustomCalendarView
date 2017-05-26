@@ -98,17 +98,8 @@ public class CustomCalendarView extends LinearLayout
 
         this.context = context;
 
-        try
-        {
-            getAttributes(attrs);
-            initializeCalendar();
-        }
-
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            return;
-        }
+        getAttributes(attrs);
+        initializeCalendar();
     }
 
     // getAttributes

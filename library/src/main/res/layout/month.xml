@@ -6,6 +6,8 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/calendarTitlePaddingBottom"
+    android:paddingTop="@dimen/calendarTitlePaddingTop"
     tools:ignore="RtlHardcoded">
 
   <ImageButton
@@ -14,7 +16,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="left|center_vertical"
       android:layout_weight="0"
-      android:src="@drawable/ic_action_previous_item"
+      android:src="@drawable/ic_action_back"
       android:background="@drawable/ic_background"
       tools:ignore="ContentDescription" />
 
@@ -33,7 +35,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="right|center_vertical"
       android:layout_weight="0"
-      android:src="@drawable/ic_action_next_item"
+      android:src="@drawable/ic_action_forward"
       android:background="@drawable/ic_background"
       tools:ignore="ContentDescription" />
 
