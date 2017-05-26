@@ -7,7 +7,7 @@
       res/values-v11/styles.xml on API 21+ devices.
   -->
   <style
-      name="AppBaseTheme" parent="android:Theme.Material.Light.DarkActionBar">
+      name="AppBaseTheme" parent="android:Theme.Material.Light.Dialog">
     <!-- API 21 theme customizations can go here. -->
   </style>
 

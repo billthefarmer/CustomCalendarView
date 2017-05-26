@@ -8,9 +8,10 @@ import java.util.Date;
  * Created by Nilanchala Panigrahy on 8/24/16.
  */
 
-public class CalendarUtils {
-
-    public static boolean isSameMonth(Calendar c1, Calendar c2) {
+public class CalendarUtils
+{
+    public static boolean isSameMonth(Calendar c1, Calendar c2)
+    {
         if (c1 == null || c2 == null)
             return false;
         return (c1.get(Calendar.ERA) == c2.get(Calendar.ERA)
@@ -25,11 +26,13 @@ public class CalendarUtils {
      * @return true if the calendar is today.
      * @throws IllegalArgumentException if the calendar is <code>null</code>
      */
-    public static boolean isToday(Calendar calendar) {
+    public static boolean isToday(Calendar calendar)
+    {
         return isSameDay(calendar, Calendar.getInstance());
     }
 
-    public static boolean isSameDay(Calendar cal1, Calendar cal2) {
+    public static boolean isSameDay(Calendar cal1, Calendar cal2)
+    {
         if (cal1 == null || cal2 == null)
             throw new IllegalArgumentException("The dates must not be null");
         return (cal1.get(Calendar.ERA) == cal2.get(Calendar.ERA) &&
@@ -37,20 +40,23 @@ public class CalendarUtils {
                 cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR));
     }
 
-    public static int getTotalWeeks(Calendar calendar) {
+    public static int getTotalWeeks(Calendar calendar)
+    {
         if (null == calendar) return 0;
         int maxWeeks = calendar.getActualMaximum(Calendar.WEEK_OF_MONTH);
         return maxWeeks;
 
     }
 
-    public static int getTotalWeeks(Date date) {
+    public static int getTotalWeeks(Date date)
+    {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         return getTotalWeeks(cal);
     }
 
-    public static boolean isPastDay(Date date) {
+    public static boolean isPastDay(Date date)
+    {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);

@@ -36,6 +36,8 @@ import java.util.Locale;
 // CustomCalendarView
 public class CustomCalendarView extends LinearLayout
 {
+    private static final int CALENDAR_DAYS = 42;
+
     // Days of week
     private static final int weekdays[] =
     {
@@ -172,38 +174,38 @@ public class CustomCalendarView extends LinearLayout
         ImageButton previous = (ImageButton) findViewById(R.id.previous);
         if (previous != null)
             previous.setOnClickListener(new View.OnClickListener()
-                {
-                    @Override
-                    public void onClick(View v)
-                    {
-                        currentMonthIndex--;
-                        currentCalendar =
-                            Calendar.getInstance(Locale.getDefault());
-                        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+        {
+            @Override
+            public void onClick(View v)
+            {
+                currentMonthIndex--;
+                currentCalendar =
+                    Calendar.getInstance(Locale.getDefault());
+                currentCalendar.add(Calendar.MONTH, currentMonthIndex);
 
-                        refreshCalendar(currentCalendar);
-                        if (calendarListener != null)
-                            calendarListener.onMonthChanged(currentCalendar);
-                    }
-                });
+                refreshCalendar(currentCalendar);
+                if (calendarListener != null)
+                    calendarListener.onMonthChanged(currentCalendar);
+            }
+        });
 
         ImageButton next = (ImageButton) findViewById(R.id.next);
         if (next != null)
             next.setOnClickListener(new View.OnClickListener()
-                {
-                    @Override
-                    public void onClick(View v)
-                    {
-                        currentMonthIndex++;
-                        currentCalendar =
-                            Calendar.getInstance(Locale.getDefault());
-                        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
-                        refreshCalendar(currentCalendar);
+        {
+            @Override
+            public void onClick(View v)
+            {
+                currentMonthIndex++;
+                currentCalendar =
+                    Calendar.getInstance(Locale.getDefault());
+                currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+                refreshCalendar(currentCalendar);
 
-                        if (calendarListener != null)
-                            calendarListener.onMonthChanged(currentCalendar);
-                    }
-                });
+                if (calendarListener != null)
+                    calendarListener.onMonthChanged(currentCalendar);
+            }
+        });
 
         // Initialize calendar for current month
         Calendar currentCalendar = Calendar.getInstance(Locale.getDefault());
@@ -249,13 +251,10 @@ public class CustomCalendarView extends LinearLayout
         for (int i = 1; i < weekDaysArray.length; i++)
         {
             dayOfTheWeekString = weekDaysArray[i];
-            // if (dayOfTheWeekString.length() > 3)
-            //     dayOfTheWeekString = dayOfTheWeekString.substring(0, 3)
-            //         .toUpperCase(Locale.getDefault());
 
             dayOfWeek = (TextView)
-                findViewById(weekdays[getWeekIndex(i,
-                                                   currentCalendar) - 1]);
+                        findViewById(weekdays[getWeekIndex(i, currentCalendar)
+                                              - 1]);
             if (dayOfWeek != null)
                 dayOfWeek.setText(dayOfTheWeekString);
         }
@@ -277,10 +276,11 @@ public class CustomCalendarView extends LinearLayout
         final Calendar startCalendar = (Calendar) calendar.clone();
         //Add required number of days
         startCalendar.add(Calendar.DATE, -(dayOfMonthIndex - 1));
-        int monthEndIndex = 42 - (actualMaximum + dayOfMonthIndex - 1);
+        int monthEndIndex =
+            CALENDAR_DAYS - (actualMaximum + dayOfMonthIndex - 1);
 
         DayView dayView;
-        for (int i = 1; i <= 42; i++)
+        for (int i = 1; i <= CALENDAR_DAYS; i++)
         {
             dayView = (DayView) findViewById(days[i - 1]);
             if (dayView == null)
@@ -313,6 +313,7 @@ public class CustomCalendarView extends LinearLayout
                     dayView.setVisibility(View.GONE);
                 }
             }
+
             dayView.decorate();
 
 
@@ -497,10 +498,10 @@ public class CustomCalendarView extends LinearLayout
 
     // onDayOfMonthClickListener
     private OnClickListener onDayOfMonthClickListener = new OnClickListener()
-        {
+    {
         @Override
         public void onClick(View view)
-            {
+        {
             // Extract day selected
             final TextView dayOfMonthText = (TextView) view;
 

@@ -16,6 +16,8 @@
 
 package org.billthefarmer.view;
 
-public interface DayDecorator {
+// DayDecorator
+public interface DayDecorator
+{
     void decorate(DayView cell);
 }

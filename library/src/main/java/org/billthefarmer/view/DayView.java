@@ -26,16 +26,19 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+// DayView
 public class DayView extends TextView
 {
     private Calendar date;
     private List<DayDecorator> decorators;
 
+    // DayView
     public DayView(Context context, AttributeSet attrs)
     {
         super(context, attrs);
     }
 
+    // bind
     public void bind(Calendar date, List<DayDecorator> decorators)
     {
         this.date = date;
@@ -43,10 +46,10 @@ public class DayView extends TextView
 
         final DateFormat dateFormat =
             new SimpleDateFormat("d", Locale.getDefault());
-        // int day = Integer.parseInt(df.format(date));
         setText(dateFormat.format(date.getTime()));
     }
 
+    // decorate
     public void decorate()
     {
         //Set custom decorators
@@ -59,6 +62,7 @@ public class DayView extends TextView
         }
     }
 
+    // getDate
     public Calendar getDate()
     {
         return date;

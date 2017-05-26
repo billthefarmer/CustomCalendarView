@@ -22,7 +22,7 @@ public class Main extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        /*
+
         // Initialize CustomCalendarView from layout
         calendarView = (CustomCalendarView) findViewById(R.id.calendar);
 
@@ -37,6 +37,5 @@ public class Main extends Activity
 
         // call refreshCalendar to update calendar the view
         calendarView.refreshCalendar(currentCalendar);
-        */
     }
 }
