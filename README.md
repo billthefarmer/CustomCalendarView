@@ -5,7 +5,7 @@ Android custom calendar view - not quite forked from https://github.com/npanigra
 
 The npanigrahy/Custom-Calendar-View library, although the best I could find, has several problems
 * It is slow starting, probably due to finding views using keys rather than ids
-* If used in a dialog it can be very wide, especially in landscape, probably due to
+* If used in a dialog it can be very wide, especially in landscape, possibly due to
   using `android:layout_width="match_parent"` rather than `wrap_content`
 * Using a colour rather than a drawable for the selected entry background, so
   you can't use a rounded rectangle, for example, without providing a DayDecorator
@@ -39,8 +39,7 @@ following code snippets.
 <org.billthefarmer.view.CustomCalendarView
 	android:id="@+id/calendar_view"
 	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-</com.stacktips.view.CustomCalendarView>
+	android:layout_height="wrap_content" />
 ```
 The above code snippet will show the simple Calendar View with the
 default design. You can use the following attributes to customize the
