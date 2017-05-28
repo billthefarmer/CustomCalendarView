@@ -21,7 +21,9 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -72,6 +74,8 @@ public class CustomCalendarView extends LinearLayout
 
     private Context context;
 
+    private GestureDetector gestureDetector;
+
     private int firstDayOfWeek = Calendar.MONDAY;
     private List<DayDecorator> decorators = null;
     private CalendarListener calendarListener;
@@ -100,6 +104,9 @@ public class CustomCalendarView extends LinearLayout
         super(context, attrs);
 
         this.context = context;
+
+        gestureDetector =
+            new GestureDetector(context, new GestureListener());
 
         getAttributes(attrs);
         initializeCalendar();
@@ -178,14 +185,7 @@ public class CustomCalendarView extends LinearLayout
             @Override
             public void onClick(View v)
             {
-                currentMonthIndex--;
-                currentCalendar =
-                    Calendar.getInstance(Locale.getDefault());
-                currentCalendar.add(Calendar.MONTH, currentMonthIndex);
-
-                refreshCalendar(currentCalendar);
-                if (calendarListener != null)
-                    calendarListener.onMonthChanged(currentCalendar);
+                onSwipeRight();
             }
         });
 
@@ -196,14 +196,7 @@ public class CustomCalendarView extends LinearLayout
             @Override
             public void onClick(View v)
             {
-                currentMonthIndex++;
-                currentCalendar =
-                    Calendar.getInstance(Locale.getDefault());
-                currentCalendar.add(Calendar.MONTH, currentMonthIndex);
-                refreshCalendar(currentCalendar);
-
-                if (calendarListener != null)
-                    calendarListener.onMonthChanged(currentCalendar);
+                onSwipeLeft();
             }
         });
 
@@ -212,6 +205,40 @@ public class CustomCalendarView extends LinearLayout
 
         setFirstDayOfWeek(Calendar.MONDAY);
         refreshCalendar(currentCalendar);
+    }
+
+    // onTouchEvent
+    @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        gestureDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    // onSwipeLeft
+    private void onSwipeLeft()
+    {
+        currentMonthIndex++;
+        currentCalendar =
+            Calendar.getInstance(Locale.getDefault());
+        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+        refreshCalendar(currentCalendar);
+
+        if (calendarListener != null)
+            calendarListener.onMonthChanged(currentCalendar);
+    }
+
+    // onSwipeRight
+    private void onSwipeRight()
+    {
+        currentMonthIndex--;
+        currentCalendar =
+            Calendar.getInstance(Locale.getDefault());
+        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+
+        refreshCalendar(currentCalendar);
+        if (calendarListener != null)
+            calendarListener.onMonthChanged(currentCalendar);
     }
 
     // initializeTitleLayout
@@ -562,5 +589,56 @@ public class CustomCalendarView extends LinearLayout
     public Calendar getCurrentCalendar()
     {
         return currentCalendar;
+    }
+
+    // GestureListener
+    private class GestureListener
+        extends GestureDetector.SimpleOnGestureListener
+    {
+        private static final int SWIPE_THRESHOLD = 100;
+        private static final int SWIPE_VELOCITY_THRESHOLD = 100;
+
+        // onDown
+        @Override
+        public boolean onDown(MotionEvent e)
+        {
+            return true;
+        }
+
+        // onFling
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2,
+                               float velocityX, float velocityY)
+        {
+            boolean result = false;
+
+            try
+            {
+                float diffY = e2.getY() - e1.getY();
+                float diffX = e2.getX() - e1.getX();
+                if (Math.abs(diffX) > Math.abs(diffY))
+                {
+                    if (Math.abs(diffX) > SWIPE_THRESHOLD &&
+                        Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD)
+                    {
+                        if (diffX > 0)
+                        {
+                            onSwipeRight();
+                        }
+
+                        else
+                        {
+                            onSwipeLeft();
+                        }
+                    }
+
+                    result = true;
+                }
+            }
+
+            catch (Exception e) {}
+
+            return result;
+        }
     }
 }
