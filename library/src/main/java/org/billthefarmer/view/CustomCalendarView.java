@@ -21,6 +21,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -39,6 +40,8 @@ import java.util.Locale;
 // CustomCalendarView
 public class CustomCalendarView extends LinearLayout
 {
+    private static final String TAG = "CustomCalendarView";
+
     private static final int CALENDAR_DAYS = 42;
 
     // Days of week
@@ -207,12 +210,12 @@ public class CustomCalendarView extends LinearLayout
         refreshCalendar(currentCalendar);
     }
 
-    // onTouchEvent
+    // dispatchTouchEvent
     @Override
-    public boolean onTouchEvent(MotionEvent event)
+    public boolean dispatchTouchEvent(MotionEvent event)
     {
         gestureDetector.onTouchEvent(event);
-        return super.onTouchEvent(event);
+        return super.dispatchTouchEvent(event);
     }
 
     // onSwipeLeft
