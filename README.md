@@ -27,7 +27,7 @@ allprojects {
 and:
 ```gradle
 dependencies {
-  compile 'com.github.billthefarmer:CustomCalendarView:v1.0'
+  compile 'com.github.billthefarmer:CustomCalendarView:v1.01'
 }
 ```
 

@@ -41,7 +41,6 @@ import java.util.Locale;
 public class CustomCalendarView extends LinearLayout
 {
     private static final String TAG = "CustomCalendarView";
-
     private static final int CALENDAR_DAYS = 42;
 
     // Days of week
@@ -238,8 +237,8 @@ public class CustomCalendarView extends LinearLayout
         currentCalendar =
             Calendar.getInstance(Locale.getDefault());
         currentCalendar.add(Calendar.MONTH, currentMonthIndex);
-
         refreshCalendar(currentCalendar);
+
         if (calendarListener != null)
             calendarListener.onMonthChanged(currentCalendar);
     }

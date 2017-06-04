@@ -52,7 +52,7 @@ public class DayView extends TextView
     // decorate
     public void decorate()
     {
-        //Set custom decorators
+        // Set custom decorators
         if (decorators != null)
         {
             for (DayDecorator decorator : decorators)
