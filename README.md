@@ -5,14 +5,18 @@ Android custom calendar view - not quite forked from https://github.com/npanigra
 
 The [npanigrahy/Custom-Calendar-View](https://github.com/npanigrahy/Custom-Calendar-View) library,
 although the best I could find, has several problems
-* It is slow starting, probably due to finding views using keys rather than ids
-* If used in a dialog it can be very wide, especially in landscape, possibly due to
-  using `android:layout_width="match_parent"` rather than `wrap_content`
-* Uses a colour rather than a drawable for the selected entry background, so
-  you can't use a rounded rectangle, for example, without providing a DayDecorator
+* It is slow starting, probably due to finding views using keys rather
+  than ids
+* If used in a dialog it can be very wide, especially in landscape,
+  possibly due to using `android:layout_width="match_parent"` rather
+  than `wrap_content`
+* Uses a colour rather than a drawable for the selected entry
+  background, so you can't use a rounded rectangle, for example,
+  without providing a DayDecorator
 
-This is an attempt to fix some of the above without breaking it. It all works as it should, but the calendar
-is the same size as [CalendarView](https://developer.android.com/reference/android/widget/CalendarView.html).
+This is an attempt to fix some of the above without breaking it. It
+all works as it should, but the calendar is about the same size as
+[CalendarView](https://developer.android.com/reference/android/widget/CalendarView.html).
 
 ## Use in project
 Add the driver to your build.gradle with
@@ -32,7 +36,6 @@ dependencies {
 ```
 
 ## Using CustomCalendarView Library
-
 The GitHub project source includes a simple test application. Once the
 library is added to your project, you can include the
 CustomCalendarView into your activity/fragment layout using the
@@ -62,6 +65,17 @@ appearance of the calendar.
         app:selectedDayBackground="@[color|drawable]/[blue|selected]"
         app:titleLayoutBackgroundColor="@color/white"
         app:weekLayoutBackgroundColor="@color/white" />
+```
+Because the android build system merges library resources when it
+builds an app, you may replace the drawables in the library with your
+own by using the same names.
+```
+ic_action_back.png
+ic_action_forward.png
+ic_up.xml
+ic_down.xml
+ic_background.xml
+selected.xml
 ```
 Initialize the calendar view to control the behavior of the calendar
 using the following methods.
