@@ -98,6 +98,8 @@ public class CustomCalendarView extends LinearLayout
     private int currentDayOfMonth;
 
     private int currentMonthIndex = 0;
+    private int currentYearIndex = 0;
+
     private boolean isOverflowDateVisible = true;
 
     // CustomCalendarView
@@ -224,6 +226,7 @@ public class CustomCalendarView extends LinearLayout
         currentCalendar =
             Calendar.getInstance(Locale.getDefault());
         currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+        currentCalendar.add(Calendar.YEAR, currentYearIndex);
         refreshCalendar(currentCalendar);
 
         if (calendarListener != null)
@@ -237,6 +240,35 @@ public class CustomCalendarView extends LinearLayout
         currentCalendar =
             Calendar.getInstance(Locale.getDefault());
         currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+        currentCalendar.add(Calendar.YEAR, currentYearIndex);
+        refreshCalendar(currentCalendar);
+
+        if (calendarListener != null)
+            calendarListener.onMonthChanged(currentCalendar);
+    }
+
+    // onSwipeDown
+    private void onSwipeDown()
+    {
+        currentYearIndex++;
+        currentCalendar =
+            Calendar.getInstance(Locale.getDefault());
+        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+        currentCalendar.add(Calendar.YEAR, currentYearIndex);
+        refreshCalendar(currentCalendar);
+
+        if (calendarListener != null)
+            calendarListener.onMonthChanged(currentCalendar);
+    }
+
+    // onSwipeUp
+    private void onSwipeUp()
+    {
+        currentYearIndex--;
+        currentCalendar =
+            Calendar.getInstance(Locale.getDefault());
+        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+        currentCalendar.add(Calendar.YEAR, currentYearIndex);
         refreshCalendar(currentCalendar);
 
         if (calendarListener != null)
@@ -616,8 +648,8 @@ public class CustomCalendarView extends LinearLayout
 
             try
             {
-                float diffY = e2.getY() - e1.getY();
                 float diffX = e2.getX() - e1.getX();
+                float diffY = e2.getY() - e1.getY();
                 if (Math.abs(diffX) > Math.abs(diffY))
                 {
                     if (Math.abs(diffX) > SWIPE_THRESHOLD &&
@@ -632,9 +664,28 @@ public class CustomCalendarView extends LinearLayout
                         {
                             onSwipeLeft();
                         }
-                    }
 
-                    result = true;
+                        result = true;
+                    }
+                }
+
+                else
+                {
+                    if (Math.abs(diffY) > SWIPE_THRESHOLD &&
+                        Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD)
+                    {
+                        if (diffY > 0)
+                        {
+                            onSwipeDown();
+                        }
+
+                        else
+                        {
+                            onSwipeUp();
+                        }
+
+                        result = true;
+                    }
                 }
             }
 
