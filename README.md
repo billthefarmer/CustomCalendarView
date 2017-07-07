@@ -4,7 +4,7 @@ Android custom calendar view - not quite forked from https://github.com/npanigra
 ![Calendar](https://github.com/billthefarmer/billthefarmer.github.io/raw/master/images/Calendar.png)
 
 The [npanigrahy/Custom-Calendar-View](https://github.com/npanigrahy/Custom-Calendar-View) library,
-although the best I could find, has several problems
+although the best I could find, has several issues
 * It is slow starting, probably due to finding views using keys rather
   than ids
 * If used in a dialog it can be very wide, especially in landscape,
