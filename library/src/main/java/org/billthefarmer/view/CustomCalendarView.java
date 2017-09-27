@@ -17,6 +17,7 @@
 package org.billthefarmer.view;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.graphics.Typeface;
@@ -103,6 +104,20 @@ public class CustomCalendarView extends LinearLayout
     private boolean isOverflowDateVisible = true;
 
     // CustomCalendarView
+    public CustomCalendarView(Context context)
+    {
+        super(context);
+
+        this.context = context;
+
+        gestureDetector =
+            new GestureDetector(context, new GestureListener());
+
+        setAttributes();
+        initializeCalendar();
+    }
+
+    // CustomCalendarView
     public CustomCalendarView(Context context, AttributeSet attrs)
     {
         super(context, attrs);
@@ -116,46 +131,69 @@ public class CustomCalendarView extends LinearLayout
         initializeCalendar();
     }
 
+    // setAttributes
+    private void setAttributes()
+    {
+        Resources resources = getResources();
+
+        calendarBackgroundColor = resources.getColor(R.color.white);
+        calendarTitleBackgroundColor = resources.getColor(R.color.white);
+        calendarTitleTextColor = resources.getColor(R.color.black);
+        weekLayoutBackgroundColor = resources.getColor(R.color.white);
+        dayOfWeekTextColor = resources.getColor(R.color.black);
+        dayOfMonthTextColor = resources.getColor(R.color.black);
+        disabledDayBackgroundColor =
+            resources.getColor(R.color.day_disabled_background_color);
+        disabledDayTextColor =
+            resources.getColor(R.color.day_disabled_text_color);
+        selectedDayBackground = R.drawable.selected;
+        selectedDayTextColor = resources.getColor(R.color.white);
+        currentDayOfMonth =
+            resources.getColor(R.color.current_day_of_month);
+    }
+
     // getAttributes
     private void getAttributes(AttributeSet attrs)
     {
+        Resources resources = getResources();
+
         final TypedArray typedArray =
             context.obtainStyledAttributes(attrs, R.styleable
                                            .CustomCalendarView, 0, 0);
         calendarBackgroundColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_calendarBackgroundColor,
-                                getResources().getColor(R.color.white));
+                                resources.getColor(R.color.white));
         calendarTitleBackgroundColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_titleLayoutBackgroundColor,
-                                getResources().getColor(R.color.white));
+                                resources.getColor(R.color.white));
         calendarTitleTextColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_calendarTitleTextColor,
-                                getResources().getColor(R.color.black));
+                                resources.getColor(R.color.black));
         weekLayoutBackgroundColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_weekLayoutBackgroundColor,
-                                getResources().getColor(R.color.white));
+                                resources.getColor(R.color.white));
         dayOfWeekTextColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_dayOfWeekTextColor,
-                                getResources().getColor(R.color.black));
+                                resources.getColor(R.color.black));
         dayOfMonthTextColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_dayOfMonthTextColor,
-                                getResources().getColor(R.color.black));
+                                resources.getColor(R.color.black));
         disabledDayBackgroundColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_disabledDayBackgroundColor,
-                                getResources()
+                                resources
                                 .getColor(R.color
                                           .day_disabled_background_color));
         disabledDayTextColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_disabledDayTextColor,
-                                getResources()
+                                resources
                                 .getColor(R.color.day_disabled_text_color));
         selectedDayBackground =
             typedArray.getInteger(R.styleable
@@ -164,11 +202,11 @@ public class CustomCalendarView extends LinearLayout
         selectedDayTextColor =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_selectedDayTextColor,
-                                getResources().getColor(R.color.white));
+                                resources.getColor(R.color.white));
         currentDayOfMonth =
             typedArray.getColor(R.styleable
                                 .CustomCalendarView_currentDayOfMonthColor,
-                                getResources()
+                                resources
                                 .getColor(R.color.current_day_of_month));
         typedArray.recycle();
     }
@@ -287,7 +325,7 @@ public class CustomCalendarView extends LinearLayout
         String monthText =
             monthTextArray[currentCalendar.get(Calendar.MONTH)];
         String titleFormat =
-            context.getResources().getString(R.string.title_format);
+            getResources().getString(R.string.title_format);
         String titleText = String.format(titleFormat, monthText,
                                          currentCalendar.get(Calendar.YEAR));
         TextView dateTitle = (TextView) findViewById(R.id.month);
