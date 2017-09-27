@@ -128,7 +128,7 @@ public class CustomCalendarDialog extends AlertDialog
     // OnDateSetListener
     public interface OnDateSetListener
     {
-        public abstract void onDateSet (CustomCalendarView view, int year,
-                                        int month, int date);
+        public abstract void onDateSet (CustomCalendarView view,
+                                        int year, int month, int date);
     }
 }

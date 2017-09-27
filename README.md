@@ -35,6 +35,42 @@ dependencies {
 }
 ```
 
+## Using CustomCalendarDialog
+### Constructors
+```java
+    public CustomCalendarDialog(Context context,
+                                OnDateSetListener listener,
+                                int year, int month, int date)
+
+    public CustomCalendarDialog(Context context, int themeResId, 
+                                OnDateSetListener listener, 
+                                int year, int month, int date)
+
+    public interface OnDateSetListener
+    {
+        public abstract void onDateSet (CustomCalendarView view,
+                                        int year, int month, int date);
+    }
+```
+### Using
+```java
+    // showCustomCalendar
+    public void showCustomCalendarDialog(Calendar date)
+    {
+        CustomCalendarDialog dialog = new
+            CustomCalendarDialog(this, this,
+                                 date.get(Calendar.YEAR),
+                                 date.get(Calendar.MONTH),
+                                 date.get(Calendar.DATE));
+
+        List<DayDecorator> decorators = new ArrayList<DayDecorator>();
+        decorators.add(new EntryDecorator(getEntries()));
+        CustomCalendarView calendarView = dialog.getCalendarView();
+        calendarView.setDecorators(decorators);
+        dialog.show();
+    }
+```
+
 ## Using CustomCalendarView Library
 The GitHub project source includes a simple test application. Once the
 library is added to your project, you can include the
