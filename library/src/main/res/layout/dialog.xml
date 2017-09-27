@@ -19,9 +19,17 @@
 
 -->
 
-<org.billthefarmer.view.CustomCalendarView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" 
-    android:id="@+id/calendar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="center" />
+    android:layout_gravity="center"
+    android:gravity="center">
+
+  <org.billthefarmer.view.CustomCalendarView
+      android:id="@+id/calendar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center" />
+
+</LinearLayout>

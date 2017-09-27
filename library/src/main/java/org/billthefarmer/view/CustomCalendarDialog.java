@@ -77,10 +77,12 @@ public class CustomCalendarDialog extends AlertDialog
         setButton(DialogInterface.BUTTON_NEGATIVE, cancel, this);
 
         // calendarView = new CustomCalendarView(getContext());
-        calendarView = (CustomCalendarView)
+        View view =
             LayoutInflater.from(getContext()).inflate(R.layout.dialog, null);
+        setView(view);
+
+        calendarView = (CustomCalendarView) view.findViewById(R.id.calendar);
         calendarView.setCalendarListener(this);
-        setView(calendarView);
 
         // Show Monday as first date of week
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);
