@@ -27,6 +27,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import java.text.DateFormat;
@@ -75,9 +76,11 @@ public class CustomCalendarDialog extends AlertDialog
             getContext().getResources().getString(android.R.string.cancel);
         setButton(DialogInterface.BUTTON_NEGATIVE, cancel, this);
 
-        calendarView = new CustomCalendarView(getContext());
+        // calendarView = new CustomCalendarView(getContext());
+        calendarView = (CustomCalendarView)
+            LayoutInflater.from(getContext()).inflate(R.layout.dialog, null);
         calendarView.setCalendarListener(this);
-        setView(calendarView, 30, 10, 30, 10);
+        setView(calendarView);
 
         // Show Monday as first date of week
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);
