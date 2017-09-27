@@ -77,7 +77,7 @@ public class CustomCalendarDialog extends AlertDialog
 
         calendarView = new CustomCalendarView(getContext());
         calendarView.setCalendarListener(this);
-        setView(calendarView, 30, 10, 0, 0);
+        setView(calendarView, 30, 10, 30, 10);
 
         // Show Monday as first date of week
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);
