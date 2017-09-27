@@ -97,7 +97,11 @@ public class CustomCalendarDialog extends AlertDialog
 
     // onMonthChanged
     @Override
-    public void onMonthChanged(Calendar date) {}
+    public void onMonthChanged(Calendar date)
+    {
+        setTitle(DateFormat.getDateInstance(DateFormat.FULL)
+                 .format(date.getTime()));
+    }
 
     // onClick
     @Override
