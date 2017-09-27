@@ -45,7 +45,9 @@ dependencies {
     public CustomCalendarDialog(Context context, int themeResId, 
                                 OnDateSetListener listener, 
                                 int year, int month, int date)
-
+```
+### Listener
+```java
     public interface OnDateSetListener
     {
         public abstract void onDateSet (CustomCalendarView view,
