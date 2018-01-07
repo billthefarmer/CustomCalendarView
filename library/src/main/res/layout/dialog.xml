@@ -38,7 +38,7 @@
       app:dayOfMonthTextColor="?android:attr/textColorPrimary"
       app:dayOfWeekTextColor="?android:attr/textColorPrimary"
       app:disabledDayBackgroundColor="?android:attr/colorBackground"
-      app:disabledDayTextColor="?android:attr/textColorSecondary"
+      app:disabledDayTextColor="?android:attr/textColorTertiary"
       app:titleLayoutBackgroundColor="?android:attr/colorBackground"
       app:weekLayoutBackgroundColor="?android:attr/colorBackground" />
 
