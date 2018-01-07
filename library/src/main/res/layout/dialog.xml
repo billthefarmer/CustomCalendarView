@@ -33,13 +33,13 @@
       android:layout_height="wrap_content"
       android:layout_margin="8dp"
       android:layout_gravity="center"
-      app:calendarBackgroundColor="?android:attr/colorBackground"
+      app:calendarBackgroundColor="?android:attr/colorBackground" /><!--
       app:calendarTitleTextColor="?android:attr/textColorPrimary"
       app:dayOfMonthTextColor="?android:attr/textColorPrimary"
       app:dayOfWeekTextColor="?android:attr/textColorPrimary"
       app:disabledDayBackgroundColor="?android:attr/editTextBackground"
       app:disabledDayTextColor="?android:attr/textColorSecondary"
       app:titleLayoutBackgroundColor="?android:attr/editTextBackground"
-      app:weekLayoutBackgroundColor="?android:attr/editTextBackground" />
+      app:weekLayoutBackgroundColor="?android:attr/editTextBackground" />-->
 
 </LinearLayout>
