@@ -76,7 +76,6 @@ public class CustomCalendarDialog extends AlertDialog
             getContext().getResources().getString(android.R.string.cancel);
         setButton(DialogInterface.BUTTON_NEGATIVE, cancel, this);
 
-        // calendarView = new CustomCalendarView(getContext());
         View view =
             LayoutInflater.from(getContext()).inflate(R.layout.dialog, null);
         setView(view);
@@ -87,7 +86,10 @@ public class CustomCalendarDialog extends AlertDialog
         // Show Monday as first date of week
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);
 
-        // Call refreshCalendar to update calendar the view
+        // Show/hide overflow days of a month
+        // calendarView.setShowOverflowDate(false);
+
+        // Call refreshCalendar to update calendar
         calendarView.refreshCalendar(date);
     }
 
