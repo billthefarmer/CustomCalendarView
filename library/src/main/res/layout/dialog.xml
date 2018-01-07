@@ -34,12 +34,12 @@
       android:layout_margin="8dp"
       android:layout_gravity="center"
       app:calendarBackgroundColor="?android:attr/colorBackground"
-      app:calendarTitleTextColor="?android:attr/textColorPrimary" /><!--
+      app:calendarTitleTextColor="?android:attr/textColorPrimary"
       app:dayOfMonthTextColor="?android:attr/textColorPrimary"
       app:dayOfWeekTextColor="?android:attr/textColorPrimary"
-      app:disabledDayBackgroundColor="?android:attr/editTextBackground"
+      app:disabledDayBackgroundColor="?android:attr/colorBackground"
       app:disabledDayTextColor="?android:attr/textColorSecondary"
-      app:titleLayoutBackgroundColor="?android:attr/editTextBackground"
-      app:weekLayoutBackgroundColor="?android:attr/editTextBackground" />-->
+      app:titleLayoutBackgroundColor="?android:attr/colorBackground"
+      app:weekLayoutBackgroundColor="?android:attr/colorBackground" />
 
 </LinearLayout>
