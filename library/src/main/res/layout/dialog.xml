@@ -21,7 +21,7 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:library="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -33,13 +33,13 @@
       android:layout_height="wrap_content"
       android:layout_margin="8dp"
       android:layout_gravity="center"
-      app:calendarBackgroundColor="?android:attr/colorBackground"
-      app:calendarTitleTextColor="?android:attr/textColorPrimary"
-      app:dayOfMonthTextColor="?android:attr/textColorPrimary"
-      app:dayOfWeekTextColor="?android:attr/textColorPrimary"
-      app:disabledDayBackgroundColor="?android:attr/colorBackground"
-      app:disabledDayTextColor="?android:attr/textColorTertiary"
-      app:titleLayoutBackgroundColor="?android:attr/colorBackground"
-      app:weekLayoutBackgroundColor="?android:attr/colorBackground" />
+      library:calendarBackgroundColor="?android:attr/colorBackground"
+      library:calendarTitleTextColor="?android:attr/textColorPrimary"
+      library:dayOfMonthTextColor="?android:attr/textColorPrimary"
+      library:dayOfWeekTextColor="?android:attr/textColorPrimary"
+      library:disabledDayBackgroundColor="?android:attr/colorBackground"
+      library:disabledDayTextColor="?android:attr/textColorTertiary"
+      library:titleLayoutBackgroundColor="?android:attr/colorBackground"
+      library:weekLayoutBackgroundColor="?android:attr/colorBackground" />
 
 </LinearLayout>
