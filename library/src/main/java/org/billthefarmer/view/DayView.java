@@ -27,44 +27,37 @@ import java.util.List;
 import java.util.Locale;
 
 // DayView
-public class DayView extends TextView
-{
+public class DayView extends TextView {
     private Calendar date;
     private List<DayDecorator> decorators;
 
     // DayView
-    public DayView(Context context, AttributeSet attrs)
-    {
+    public DayView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
     // bind
-    public void bind(Calendar date, List<DayDecorator> decorators)
-    {
+    public void bind(Calendar date, List<DayDecorator> decorators) {
         this.date = date;
         this.decorators = decorators;
 
         final DateFormat dateFormat =
-            new SimpleDateFormat("d", Locale.getDefault());
+                new SimpleDateFormat("d", Locale.getDefault());
         setText(dateFormat.format(date.getTime()));
     }
 
     // decorate
-    public void decorate()
-    {
+    public void decorate() {
         // Set custom decorators
-        if (decorators != null)
-        {
-            for (DayDecorator decorator : decorators)
-            {
+        if (decorators != null) {
+            for (DayDecorator decorator : decorators) {
                 decorator.decorate(this);
             }
         }
     }
 
     // getDate
-    public Calendar getDate()
-    {
+    public Calendar getDate() {
         return date;
     }
 }

@@ -1,42 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/title"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/calendarTitlePaddingBottom"
+    android:orientation="horizontal"
     android:paddingTop="@dimen/calendarTitlePaddingTop"
+    android:paddingBottom="@dimen/calendarTitlePaddingBottom"
     tools:ignore="RtlHardcoded">
 
-  <ImageButton
-      android:id="@+id/previous"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="left|center_vertical"
-      android:layout_weight="0"
-      android:src="@drawable/ic_action_back"
-      android:background="@drawable/ic_background"
-      tools:ignore="ContentDescription" />
+    <ImageButton
+        android:id="@+id/previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:layout_weight="0"
+        android:background="@drawable/ic_background"
+        android:src="@drawable/ic_action_back"
+        tools:ignore="ContentDescription" />
 
-  <TextView
-      android:id="@+id/month"
-      style="@style/CalendarView.MonthTitle"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:layout_gravity="center"
-      android:gravity="center"/>
+    <TextView
+        android:id="@+id/month"
+        style="@style/CalendarView.MonthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center" />
 
-  <ImageButton
-      android:id="@+id/next"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="right|center_vertical"
-      android:layout_weight="0"
-      android:src="@drawable/ic_action_forward"
-      android:background="@drawable/ic_background"
-      tools:ignore="ContentDescription" />
+    <ImageButton
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_weight="0"
+        android:background="@drawable/ic_background"
+        android:src="@drawable/ic_action_forward"
+        tools:ignore="ContentDescription" />
 
 </LinearLayout>

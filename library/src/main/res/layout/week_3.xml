@@ -1,73 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/week_3"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:baselineAligned="false"
     android:orientation="horizontal">
 
-  <org.billthefarmer.view.DayView
-      android:id="@+id/day_15"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      style="@style/CalendarView.DayOfTheMonth"
-      android:layout_weight="1"
-      android:gravity="center" />
+    <org.billthefarmer.view.DayView
+        android:id="@+id/day_15"
+        style="@style/CalendarView.DayOfTheMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center" />
 
-  <org.billthefarmer.view.DayView
-      android:id="@+id/day_16"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      style="@style/CalendarView.DayOfTheMonth"
-      android:layout_weight="1"
-      android:gravity="center" />
+    <org.billthefarmer.view.DayView
+        android:id="@+id/day_16"
+        style="@style/CalendarView.DayOfTheMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center" />
 
-  <org.billthefarmer.view.DayView
-      android:id="@+id/day_17"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      style="@style/CalendarView.DayOfTheMonth"
-      android:layout_weight="1"
-      android:gravity="center" />
+    <org.billthefarmer.view.DayView
+        android:id="@+id/day_17"
+        style="@style/CalendarView.DayOfTheMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center" />
 
-  <org.billthefarmer.view.DayView
-      android:id="@+id/day_18"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      style="@style/CalendarView.DayOfTheMonth"
-      android:layout_weight="1"
-      android:gravity="center" />
+    <org.billthefarmer.view.DayView
+        android:id="@+id/day_18"
+        style="@style/CalendarView.DayOfTheMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center" />
 
-  <org.billthefarmer.view.DayView
-      android:id="@+id/day_19"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      style="@style/CalendarView.DayOfTheMonth"
-      android:layout_weight="1"
-      android:gravity="center" />
+    <org.billthefarmer.view.DayView
+        android:id="@+id/day_19"
+        style="@style/CalendarView.DayOfTheMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center" />
 
-  <org.billthefarmer.view.DayView
-      android:id="@+id/day_20"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      style="@style/CalendarView.DayOfTheMonth"
-      android:layout_weight="1"
-      android:gravity="center" />
+    <org.billthefarmer.view.DayView
+        android:id="@+id/day_20"
+        style="@style/CalendarView.DayOfTheMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center" />
 
-  <org.billthefarmer.view.DayView
-      android:id="@+id/day_21"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      style="@style/CalendarView.DayOfTheMonth"
-      android:layout_weight="1"
-      android:gravity="center" />
+    <org.billthefarmer.view.DayView
+        android:id="@+id/day_21"
+        style="@style/CalendarView.DayOfTheMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center" />
 
 </LinearLayout>

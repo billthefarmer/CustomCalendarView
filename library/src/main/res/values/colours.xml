@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <color name="white">@android:color/background_light</color>
-  <color name="black">@android:color/background_dark</color>
-  <color name="day_disabled_background_color">#F1F5F8</color>
-  <color name="day_disabled_text_color">#DEDEDE</color>
-  <color name="current_day_of_month">@android:color/holo_blue_light</color>
+    <color name="white">@android:color/background_light</color>
+    <color name="black">@android:color/background_dark</color>
+    <color name="day_disabled_background_color">#F1F5F8</color>
+    <color name="day_disabled_text_color">#DEDEDE</color>
+    <color name="current_day_of_month">@android:color/holo_blue_light</color>
 
 </resources>
