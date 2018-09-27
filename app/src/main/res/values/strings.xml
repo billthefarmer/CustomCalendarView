@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-  <string name="appName">CalendarView</string>
-
+    <string name="app_name">CalendarView Sample</string>
 </resources>
