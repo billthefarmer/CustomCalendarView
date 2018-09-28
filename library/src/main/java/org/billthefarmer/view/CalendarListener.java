@@ -19,8 +19,8 @@ package org.billthefarmer.view;
 import java.util.Calendar;
 
 // CalendarListener
-public interface CalendarListener
-{
+public interface CalendarListener {
     void onDateSelected(Calendar date);
+
     void onMonthChanged(Calendar date);
 }

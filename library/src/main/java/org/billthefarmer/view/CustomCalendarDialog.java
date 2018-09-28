@@ -22,24 +22,17 @@
 package org.billthefarmer.view;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 // CustomCalendarDialog
 public class CustomCalendarDialog extends AlertDialog
-    implements CalendarListener, DialogInterface.OnClickListener
-{
+        implements CalendarListener, DialogInterface.OnClickListener {
     private final static String TAG = "CustomCalendarDialog";
 
     private OnDateSetListener listener;
@@ -49,16 +42,14 @@ public class CustomCalendarDialog extends AlertDialog
     // CustomCalendarDialog
     public CustomCalendarDialog(Context context,
                                 OnDateSetListener listener,
-                                int year, int month, int dayOfMonth)
-    {
+                                int year, int month, int dayOfMonth) {
         this(context, 0, listener, year, month, dayOfMonth);
     }
 
     // CustomCalendarDialog
-    public CustomCalendarDialog(Context context, int themeResId, 
-                                OnDateSetListener listener, 
-                                int year, int month, int dayOfMonth)
-    {
+    public CustomCalendarDialog(Context context, int themeResId,
+                                OnDateSetListener listener,
+                                int year, int month, int dayOfMonth) {
         super(context, themeResId);
 
         this.listener = listener;
@@ -67,20 +58,20 @@ public class CustomCalendarDialog extends AlertDialog
         date.set(year, month, dayOfMonth);
 
         setTitle(DateFormat.getDateInstance(DateFormat.FULL)
-                 .format(date.getTime()));
+                .format(date.getTime()));
 
         String ok =
-            getContext().getResources().getString(android.R.string.ok);
+                getContext().getResources().getString(android.R.string.ok);
         setButton(DialogInterface.BUTTON_POSITIVE, ok, this);
         String cancel =
-            getContext().getResources().getString(android.R.string.cancel);
+                getContext().getResources().getString(android.R.string.cancel);
         setButton(DialogInterface.BUTTON_NEGATIVE, cancel, this);
 
         View view =
-            LayoutInflater.from(getContext()).inflate(R.layout.dialog, null);
+                LayoutInflater.from(getContext()).inflate(R.layout.dialog, null);
         setView(view);
 
-        calendarView = (CustomCalendarView) view.findViewById(R.id.calendar);
+        calendarView = view.findViewById(R.id.calendar);
         calendarView.setCalendarListener(this);
 
         // Show Monday as first date of week
@@ -95,47 +86,41 @@ public class CustomCalendarDialog extends AlertDialog
 
     // onDateSelected
     @Override
-    public void onDateSelected(Calendar date)
-    {
+    public void onDateSelected(Calendar date) {
         this.date = date;
         setTitle(DateFormat.getDateInstance(DateFormat.FULL)
-                 .format(date.getTime()));
+                .format(date.getTime()));
     }
 
     // onMonthChanged
     @Override
-    public void onMonthChanged(Calendar date)
-    {
+    public void onMonthChanged(Calendar date) {
         setTitle(DateFormat.getDateInstance(DateFormat.FULL)
-                 .format(date.getTime()));
+                .format(date.getTime()));
     }
 
     // onClick
     @Override
-    public void onClick (DialogInterface dialog, int which)
-    {
-        switch (which)
-        {
-        case DialogInterface.BUTTON_POSITIVE:
-            if (listener != null)
-                listener.onDateSet(calendarView,
-                                   date.get(Calendar.YEAR),
-                                   date.get(Calendar.MONTH),
-                                   date.get(Calendar.DATE));
-            break;
+    public void onClick(DialogInterface dialog, int which) {
+        switch (which) {
+            case DialogInterface.BUTTON_POSITIVE:
+                if (listener != null)
+                    listener.onDateSet(calendarView,
+                            date.get(Calendar.YEAR),
+                            date.get(Calendar.MONTH),
+                            date.get(Calendar.DATE));
+                break;
         }
     }
 
     // getCalendarView
-    public CustomCalendarView getCalendarView()
-    {
+    public CustomCalendarView getCalendarView() {
         return calendarView;
     }
 
     // OnDateSetListener
-    public interface OnDateSetListener
-    {
-        public abstract void onDateSet (CustomCalendarView view,
-                                        int year, int month, int date);
+    public interface OnDateSetListener {
+        void onDateSet(CustomCalendarView view,
+                       int year, int month, int date);
     }
 }

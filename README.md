@@ -22,23 +22,24 @@ all works as it should, but the calendar is about the same size as
 Add the driver to your build.gradle with
 ```gradle
 allprojects {
-  repositories {
-    jcenter()
-    maven { url "https://jitpack.io" }
-  }
+    repositories {
+        jcenter()
+        google()
+        maven { url "https://jitpack.io" }
+    }
 }
 ```
 and:
 ```gradle
 dependencies {
-  compile 'com.github.billthefarmer:CustomCalendarView:v1.03'
+    implementation 'com.github.billthefarmer:CustomCalendarView:v1.04'
 }
 ```
 
 ## Using CustomCalendarDialog
 ### Constructors
 ```java
-    public CustomCalendarDialog(Context context,
+public CustomCalendarDialog(Context context,
                                 OnDateSetListener listener,
                                 int year, int month, int date)
 
