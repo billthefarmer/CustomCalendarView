@@ -98,8 +98,8 @@ public class CustomCalendarView extends LinearLayout
     private int dayOfMonthTextColor;
     private int currentDayOfMonth;
 
-    private int currentMonthIndex = 0;
-    private int currentYearIndex = 0;
+    // private int currentMonthIndex = 0;
+    // private int currentYearIndex = 0;
 
     private boolean isOverflowDateVisible = true;
 
@@ -132,6 +132,7 @@ public class CustomCalendarView extends LinearLayout
     }
 
     // setAttributes
+    @SuppressWarnings("deprecation")
     private void setAttributes()
     {
         Resources resources = getResources();
@@ -153,6 +154,7 @@ public class CustomCalendarView extends LinearLayout
     }
 
     // getAttributes
+    @SuppressWarnings("deprecation")
     private void getAttributes(AttributeSet attrs)
     {
         Resources resources = getResources();
@@ -260,11 +262,11 @@ public class CustomCalendarView extends LinearLayout
     // onSwipeLeft
     private void onSwipeLeft()
     {
-        currentMonthIndex++;
-        currentCalendar =
-            Calendar.getInstance(Locale.getDefault());
-        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
-        currentCalendar.add(Calendar.YEAR, currentYearIndex);
+        // currentMonthIndex++;
+        // currentCalendar =
+        //     Calendar.getInstance(Locale.getDefault());
+        currentCalendar.add(Calendar.MONTH, 1);
+        // currentCalendar.add(Calendar.YEAR, currentYearIndex);
         refreshCalendar(currentCalendar);
 
         if (calendarListener != null)
@@ -274,11 +276,11 @@ public class CustomCalendarView extends LinearLayout
     // onSwipeRight
     private void onSwipeRight()
     {
-        currentMonthIndex--;
-        currentCalendar =
-            Calendar.getInstance(Locale.getDefault());
-        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
-        currentCalendar.add(Calendar.YEAR, currentYearIndex);
+        // currentMonthIndex--;
+        // currentCalendar =
+        //     Calendar.getInstance(Locale.getDefault());
+        currentCalendar.add(Calendar.MONTH, -1);
+        // currentCalendar.add(Calendar.YEAR, currentYearIndex);
         refreshCalendar(currentCalendar);
 
         if (calendarListener != null)
@@ -288,11 +290,11 @@ public class CustomCalendarView extends LinearLayout
     // onSwipeDown
     private void onSwipeDown()
     {
-        currentYearIndex++;
-        currentCalendar =
-            Calendar.getInstance(Locale.getDefault());
-        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
-        currentCalendar.add(Calendar.YEAR, currentYearIndex);
+        // currentYearIndex++;
+        // currentCalendar =
+        //     Calendar.getInstance(Locale.getDefault());
+        // currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+        currentCalendar.add(Calendar.YEAR, 1);
         refreshCalendar(currentCalendar);
 
         if (calendarListener != null)
@@ -302,11 +304,11 @@ public class CustomCalendarView extends LinearLayout
     // onSwipeUp
     private void onSwipeUp()
     {
-        currentYearIndex--;
-        currentCalendar =
-            Calendar.getInstance(Locale.getDefault());
-        currentCalendar.add(Calendar.MONTH, currentMonthIndex);
-        currentCalendar.add(Calendar.YEAR, currentYearIndex);
+        // currentYearIndex--;
+        // currentCalendar =
+        //     Calendar.getInstance(Locale.getDefault());
+        // currentCalendar.add(Calendar.MONTH, currentMonthIndex);
+        currentCalendar.add(Calendar.YEAR, -1);
         refreshCalendar(currentCalendar);
 
         if (calendarListener != null)

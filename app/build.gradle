@@ -2,15 +2,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 'android-22'
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 22
+    buildToolsVersion '28.0.3'
 
     lintOptions {
-        disable 'IconDensities'
+        disable 'IconDensities', 'ExpiredTargetSdkVersion'
 	// abortOnError false
     }
 }
 
 dependencies {
-    compile project(':library')
+    implementation project(':library')
 }
