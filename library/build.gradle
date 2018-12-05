@@ -1,8 +1,7 @@
-
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group='com.github.billthefarmer'
+group = 'com.github.billthefarmer'
 
 android {
     compileSdkVersion 28
@@ -10,7 +9,7 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 22
+        targetSdkVersion 28
     }
 
     compileOptions {

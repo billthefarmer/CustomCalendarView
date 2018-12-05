@@ -20,3 +20,7 @@ allprojects {
         options.deprecation = true
     }
 }
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

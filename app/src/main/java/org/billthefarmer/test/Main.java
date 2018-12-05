@@ -19,27 +19,22 @@ package org.billthefarmer.test;
 import android.app.Activity;
 import android.os.Bundle;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-
 import org.billthefarmer.view.CustomCalendarView;
 
-public class Main extends Activity
-{
-    public final static String TAG = "Main";
+import java.util.Calendar;
+import java.util.Locale;
 
-    private CustomCalendarView calendarView;
+public class Main extends Activity {
+    public final static String TAG = "Main";
 
     // onCreate
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
         // Initialize CustomCalendarView from layout
-        calendarView = (CustomCalendarView) findViewById(R.id.calendar);
+        CustomCalendarView calendarView = findViewById(R.id.calendar);
 
         // Show Monday as first date of week
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);

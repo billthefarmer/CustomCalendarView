@@ -1,9 +1,21 @@
-
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
+    compileSdkVersion 28
     buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "org.billthefarmer.test"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionName "1.0"
+        versionCode 1
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
     lintOptions {
         disable 'IconDensities', 'ExpiredTargetSdkVersion'
