@@ -32,14 +32,14 @@ allprojects {
 and:
 ```gradle
 dependencies {
-    implementation 'com.github.billthefarmer:CustomCalendarView:v1.04'
+    implementation 'com.github.billthefarmer:CustomCalendarView:v1.05'
 }
 ```
 
 ## Using CustomCalendarDialog
 ### Constructors
 ```java
-public CustomCalendarDialog(Context context,
+    public CustomCalendarDialog(Context context,
                                 OnDateSetListener listener,
                                 int year, int month, int date)
 
@@ -67,7 +67,7 @@ public CustomCalendarDialog(Context context,
                                  date.get(Calendar.DATE));
 
         List<DayDecorator> decorators = new ArrayList<DayDecorator>();
-        decorators.add(new EntryDecorator(getEntries()));
+        decorators.add(new EntryDecorator());
         CustomCalendarView calendarView = dialog.getCalendarView();
         calendarView.setDecorators(decorators);
         dialog.show();
