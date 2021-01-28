@@ -1,4 +1,4 @@
-# ![Logo](app/src/main/res/drawable-mdpi/ic_launcher.png) CustomCalendarView [![Build Status](https://travis-ci.org/billthefarmer/CustomCalendarView.svg?branch=master)](https://travis-ci.org/billthefarmer/CustomCalendarView) [![JitPack](https://jitpack.io/v/billthefarmer/CustomCalendarView.svg)](https://jitpack.io/#billthefarmer/CustomCalendarView)
+# ![Logo](app/src/main/res/drawable-mdpi/ic_launcher.png) CustomCalendarView [![.github/workflows/build.yml](https://github.com/billthefarmer/CustomCalendarView/workflows/.github/workflows/build.yml/badge.svg)](https://github.com/billthefarmer/CustomCalendarView/workflows/.github/actions) [![JitPack](https://jitpack.io/v/billthefarmer/CustomCalendarView.svg)](https://jitpack.io/#billthefarmer/CustomCalendarView)
 Android custom calendar view - not quite forked from https://github.com/npanigrahy/Custom-Calendar-View
 
 ![Calendar](https://github.com/billthefarmer/billthefarmer.github.io/raw/master/images/Calendar.png)
