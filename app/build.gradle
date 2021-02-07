@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "org.billthefarmer.test"
         minSdkVersion 14
-        targetSdkVersion 22
+        targetSdkVersion 28
         versionName "1.0"
         versionCode 1
     }
@@ -18,7 +18,8 @@ android {
     }
 
     lintOptions {
-        disable 'IconDensities', 'ExpiredTargetSdkVersion'
+        disable 'IconDensities', 'ExpiredTargetSdkVersion', 'OldTargetApi',
+            'AllowBackup'
 	// abortOnError false
     }
 }

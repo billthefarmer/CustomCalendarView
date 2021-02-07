@@ -95,9 +95,6 @@ public class CustomCalendarView extends LinearLayout
     private int dayOfMonthTextColor;
     private int currentDayOfMonth;
 
-    // private int currentMonthIndex = 0;
-    // private int currentYearIndex = 0;
-
     private boolean isOverflowDateVisible = true;
     // onDayOfMonthClickListener
     private OnClickListener onDayOfMonthClickListener = new OnClickListener()
